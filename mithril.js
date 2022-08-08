@@ -1512,11 +1512,6 @@
 			}
 		}
 
-		forEach(unloaders, function (unloader) {
-			unloader.handler.call(unloader.controller, event)
-			unloader.controller.onunload = null
-		})
-
 		if (isPrevented) {
 			forEach(unloaders, function (unloader) {
 				unloader.controller.onunload = unloader.handler
